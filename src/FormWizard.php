@@ -445,7 +445,7 @@ class FormWizard extends Widget
     const BS_3 = 3;
     const BS_4 = 4;
 
-    const BS_5 = 5
+    const BS_5 = 5;
 
     /**
      * TEXT LABELS CONSTANTS
