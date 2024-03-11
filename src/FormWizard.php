@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHP VERSION >=5.6
  *
@@ -9,6 +10,7 @@
  * @license   https://github.com/buttflattery/yii2-formwizard/blob/master/LICENSE BSD License 3.01
  * @link      https://github.com/buttflattery/yii2-formwizard
  */
+
 namespace buttflattery\formwizard;
 
 use Yii;
@@ -729,7 +731,6 @@ JS;
 
             //get preview headings for Javascript
             $this->_previewHeadings[] = ArrayHelper::getValue($step, 'previewHeading', '');
-
         }
 
         //end tabs html
@@ -929,16 +930,22 @@ JS;
         $themeSelected = $this->theme;
 
         //register plugin assets
-        $this->isBs3()
-            ?
-        Bs3Assets::register($view)
-            : Bs4Assets::register($view);
+        switch ($this->_bsVersion) {
+            case self::BS_3:
+                Bs3Assets::register($this);
+                break;
+            case self::BS_4:
+                Bs4Assets::register($this);
+                break;
+            default:
+                Bs5Assets::register($this);
+        }
 
         //is supported theme
         if (in_array($themeSelected, array_keys($this->themesSupported))) {
             $themeAsset = __NAMESPACE__ . '\\assetbundles\\bs' .
-            $this->_bsVersion . '\\Theme' .
-            $this->themesSupported[$themeSelected] . 'Asset';
+                $this->_bsVersion . '\\Theme' .
+                $this->themesSupported[$themeSelected] . 'Asset';
 
             $themeAsset::register($view);
         }
