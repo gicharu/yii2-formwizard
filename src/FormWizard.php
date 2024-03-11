@@ -665,7 +665,7 @@ JS;
         } elseif ($this->isBs4()) {
             $activeForm = BS4ActiveForm::class;
         } else {
-            $activeForm = BS4
+            $activeForm = BS5ActiveForm::class;
         }
 
         //start ActiveForm tag
