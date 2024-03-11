@@ -25,6 +25,9 @@ use yii\bootstrap4\ActiveForm as BS4ActiveForm;
 use yii\base\InvalidArgumentException as ArgException;
 use buttflattery\formwizard\assetbundles\bs3\FormWizardAsset as Bs3Assets;
 use buttflattery\formwizard\assetbundles\bs4\FormWizardAsset as Bs4Assets;
+use yii\bootstrap5\ActiveForm as BS5ActiveForm;
+use buttflattery\formwizard\assetbundles\bs5\FormWizardAsset as Bs5Assets;
+
 
 /**
  * A Yii2 plugin used for creating stepped form or form wizard using
@@ -442,6 +445,8 @@ class FormWizard extends Widget
     const BS_3 = 3;
     const BS_4 = 4;
 
+    const BS_5 = 5
+
     /**
      * TEXT LABELS CONSTANTS
      * */
@@ -657,8 +662,10 @@ JS;
         //load respective bootstrap assets
         if ($this->isBs3()) {
             $activeForm = BS3ActiveForm::class;
-        } else {
+        } elseif ($this->isBs4()) {
             $activeForm = BS4ActiveForm::class;
+        } else {
+            $activeForm = BS4
         }
 
         //start ActiveForm tag

@@ -62,6 +62,12 @@ trait WizardTrait
         return $this->_bsVersion == self::BS_3;
     }
 
+
+    public function isBs4()
+    {
+        return $this->_bsVersion == self::BS_4;
+    }
+
     /**
      * @param $stepType
      * @return mixed

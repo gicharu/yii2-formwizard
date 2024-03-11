@@ -3,3 +3,4 @@ package-lock.json
 _config.yml
 .vscode
 *.sh
+vendor
