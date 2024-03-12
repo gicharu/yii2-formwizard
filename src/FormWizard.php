@@ -932,13 +932,13 @@ JS;
         //register plugin assets
         switch ($this->_bsVersion) {
             case self::BS_3:
-                Bs3Assets::register($this);
+                Bs3Assets::register($view);
                 break;
             case self::BS_4:
-                Bs4Assets::register($this);
+                Bs4Assets::register($view);
                 break;
             default:
-                Bs5Assets::register($this);
+                Bs5Assets::register($view);
         }
 
         //is supported theme
