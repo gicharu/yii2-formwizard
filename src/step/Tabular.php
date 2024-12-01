@@ -50,6 +50,12 @@ class Tabular
      */
     public $formOptions;
 
+
+    /**
+     * @var $limit
+     */
+    public $limit;
+
     /**
      * Dependent input script
      *
