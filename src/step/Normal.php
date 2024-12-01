@@ -20,6 +20,11 @@ class Normal
     public $form;
 
     /**
+     * @var $stepConfig array
+     */
+    public $stepConfig;
+
+    /**
      * @var mixed
      */
     public $fieldConfig;
