@@ -30,6 +30,11 @@ class Normal
     public $fieldConfig;
 
     /**
+     * @var $formOptions array
+     */
+    public $formOptions;
+
+    /**
      * @var mixed
      */
     public $attributes;
